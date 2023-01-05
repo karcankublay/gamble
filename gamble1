@@ -1,0 +1,115 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class GAmbxle {
+    public static void main(String[] args){
+
+        Random rand = new Random() ;
+        Scanner input = new Scanner(System.in);
+        System.out.println("Hello player welcome to the Vegas How much Money do you have ?");
+        int bank = input.nextInt();
+        if(bank<0){
+            System.out.println("Get out !");
+        }
+        
+        else{
+            while(bank>0){
+                System.out.println("You have 2 choices , 1. number game 2. color game Which one is your interest just press 1 or 2.");    
+        
+                int number = input.nextInt();
+                if(number == 1 || number ==2 ){
+                    switch (number) {
+                        case 1:
+                
+                            while (bank>0){
+                  
+                            System.out.println("Give your number(1-21) and How much money to bet   ");
+                            int value =input.nextInt() ;
+                            int bet = input.nextInt();
+                            int radax = (rand.nextInt(21)+1) ;
+                            System.out.println("Magic Number : " +radax);
+            
+            
+                            if(radax == value){
+                                bet = bet*4 ;
+                                System.out.println("!!!!WOOW YOU WİN !!!!!! "+ bet +"   dolars"+ " you earn");
+                                bank = bank + bet ;
+                
+                            System.out.println("Money :"+bank);
+                            }
+                            else{
+                                System.out.println("You LOSE");
+                                bank = bank - bet ;
+                                System.out.println("Money :"+bank);
+            
+            
+                               }
+                    
+                                
+                            System.out.println("İf YOU WANT TO LEAVE PRESS 0");  
+                            int pressu =input.nextInt() ;
+                             if (pressu==0){
+                                  break;
+                             }
+        
+                             }
+                            break; 
+                
+                        case 2:
+                        while (bank>0){
+                  
+                            System.out.println(" Hello Witch color do you pick "+" RED press '1'"+" OR BLACK press'2'"+" and your bet ?");
+                            int color =input.nextInt() ;
+                            int betc = input.nextInt();
+                            String fair ;
+                            int colorz =(rand.nextInt(2)+1) ;
+                            if (colorz==1){
+                               fair ="red" ;
+                            }
+                            else{
+                                fair ="black" ;
+                            }
+                            System.out.println("COLOR " +fair);
+                            if(color==colorz){
+                                betc = betc*2 ;
+                                System.out.println("!!!!WOOW YOU WİN !!!!!! "+ betc +"   dolars"+ " you earn");
+                                bank= betc+ bank ;
+                                System.out.println("Money :"+bank);
+                            }
+                            else{
+                                bank=bank-betc ;
+                                System.out.println("You LOSE");
+                                System.out.println("Money :"+bank);
+                            
+                            
+                            }
+                            System.out.println("İf YOU WANT TO LEAVE PRESS 0");  
+                            int press =input.nextInt() ;
+                             if (press==0){
+                                  break;
+                             }
+                            }
+                        default:
+                            System.out.println("goodbye :)"+bank);
+        
+             
+                        
+                            break;
+                            
+            }       
+                }
+            }
+        System.out.println("Money :"+bank);
+    
+        
+        
+        
+        
+        
+        
+        
+        
+    
+    }
+    }
+}
